@@ -1,0 +1,484 @@
+*   Trying 127.0.0.1:8083...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 127.0.0.1 (127.0.0.1) port 8083 (#0)
+> POST /api/v1/campaigns/2/send-now HTTP/1.1
+> Host: 127.0.0.1:8083
+> User-Agent: curl/7.81.0
+> Authorization: Bearer 2|obv6aYhEmjttgxH3htDqhBYJUw1676JVDaEH1J4T827cd092
+> Accept: application/json
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 500 Internal Server Error
+< Host: 127.0.0.1:8083
+< Connection: close
+< X-Powered-By: PHP/8.3.29
+< Cache-Control: no-cache, private
+< Date: Thu, 08 Jan 2026 16:14:22 GMT
+< Content-Type: application/json
+< Access-Control-Allow-Origin: *
+< 
+{ [19321 bytes data]
+{
+    "message": "No active recipients found.",
+    "exception": "RuntimeException",
+    "file": "/var/www/email-campagne/backend/app/Jobs/PrepareCampaignSendJob.php",
+    "line": 59,
+    "trace": [
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+            "line": 36,
+            "function": "handle",
+            "class": "App\\Jobs\\PrepareCampaignSendJob",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+            "line": 43,
+            "function": "Illuminate\\Container\\{closure}",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+            "line": 96,
+            "function": "unwrapIfClosure",
+            "class": "Illuminate\\Container\\Util",
+            "type": "::"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+            "line": 35,
+            "function": "callBoundMethod",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 799,
+            "function": "call",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php",
+            "line": 129,
+            "function": "call",
+            "class": "Illuminate\\Container\\Container",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "Illuminate\\Bus\\{closure}",
+            "class": "Illuminate\\Bus\\Dispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php",
+            "line": 133,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php",
+            "line": 134,
+            "function": "dispatchNow",
+            "class": "Illuminate\\Bus\\Dispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "Illuminate\\Queue\\{closure}",
+            "class": "Illuminate\\Queue\\CallQueuedHandler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php",
+            "line": 127,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php",
+            "line": 68,
+            "function": "dispatchThroughMiddleware",
+            "class": "Illuminate\\Queue\\CallQueuedHandler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php",
+            "line": 102,
+            "function": "call",
+            "class": "Illuminate\\Queue\\CallQueuedHandler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php",
+            "line": 131,
+            "function": "fire",
+            "class": "Illuminate\\Queue\\Jobs\\Job",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php",
+            "line": 111,
+            "function": "executeJob",
+            "class": "Illuminate\\Queue\\SyncQueue",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php",
+            "line": 246,
+            "function": "push",
+            "class": "Illuminate\\Queue\\SyncQueue",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php",
+            "line": 230,
+            "function": "pushCommandToQueue",
+            "class": "Illuminate\\Bus\\Dispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php",
+            "line": 80,
+            "function": "dispatchToQueue",
+            "class": "Illuminate\\Bus\\Dispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Bus/PendingDispatch.php",
+            "line": 252,
+            "function": "dispatch",
+            "class": "Illuminate\\Bus\\Dispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Bus/Dispatchable.php",
+            "line": 19,
+            "function": "__destruct",
+            "class": "Illuminate\\Foundation\\Bus\\PendingDispatch",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/app/Http/Controllers/Api/V1/CampaignsController.php",
+            "line": 237,
+            "function": "dispatch",
+            "class": "App\\Jobs\\PrepareCampaignSendJob",
+            "type": "::"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+            "line": 46,
+            "function": "sendNow",
+            "class": "App\\Http\\Controllers\\Api\\V1\\CampaignsController",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 265,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\ControllerDispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 211,
+            "function": "runController",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 822,
+            "function": "run",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/app/Http/Middleware/SetWorkspace.php",
+            "line": 32,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\SetWorkspace",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+            "line": 50,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+            "line": 63,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Auth\\Middleware\\Authenticate",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 821,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 800,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 764,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 753,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 200,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "line": 109,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "line": 61,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "line": 58,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",100 19321    0 19321    0     0   829k      0 --:--:-- --:--:-- --:--:--  857k
+* Closing connection 0
+
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "line": 26,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 175,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 144,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+            "line": 1220,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/public/index.php",
+            "line": 20,
+            "function": "handleRequest",
+            "class": "Illuminate\\Foundation\\Application",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/email-campagne/backend/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php",
+            "line": 23,
+            "function": "require_once"
+        }
+    ]
+}
