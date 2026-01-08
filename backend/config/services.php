@@ -31,8 +31,21 @@ return [
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
-            'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
+            'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'), 
         ],
+    ],
+
+    'email_provider' => [
+        'driver' => env('EMAIL_PROVIDER', 'log'), // log|mailgun
+    ],
+
+    'mailgun' => [
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+    ],
+
+    'unsubscribe' => [
+        'signing_key' => env('UNSUBSCRIBE_SIGNING_KEY', env('APP_KEY')),
     ],
 
 ];

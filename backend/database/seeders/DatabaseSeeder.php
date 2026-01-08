@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             PlanSeeder::class,
+            EmailTemplateSeeder::class,
         ]);
     }
 }
