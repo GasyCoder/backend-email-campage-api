@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api\V1\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Workspace;
+use App\Models\Plan;
+use App\Models\Subscription;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
@@ -33,6 +36,16 @@ class RegisterController extends Controller
 
         $user->workspace_id = $workspace->id;
         $user->save();
+
+        $freePlan = Plan::query()->where('code', 'free')->firstOrFail();
+
+        Subscription::create([
+            'workspace_id' => $workspace->id,
+            'plan_id' => $freePlan->id,
+            'status' => 'active',
+            'current_period_start' => Carbon::now()->startOfMonth(),
+            'current_period_end' => Carbon::now()->endOfMonth(),
+        ]);
 
         $token = $user->createToken('api-token')->plainTextToken;
 
